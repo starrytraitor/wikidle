@@ -27,6 +27,7 @@
   var input = ""
   function decreaseChance(){
     document.getElementById("chancesRemaining").textContent = chances
+    chances -=1
     document.getElementById("chancesRemaining").textContent = chances
     input = document.getElementById("userInput").value
     document.getElementById("guessedWord").textContent = input
