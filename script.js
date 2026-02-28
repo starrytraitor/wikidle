@@ -26,7 +26,8 @@
         e.preventDefault();
 
         var input = $("#guessInput").val()
-        userGuesses.push();
+        userGuesses.push(input);
+        console.log(input)
         console.log(userGuesses)
     });
 
