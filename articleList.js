@@ -1,4 +1,4 @@
-export const ARTICLE_LIST = [
+const ARTICLE_LIST = [
     "United_States",
     "Donald_Trump",
     "Elizabeth II",

@@ -20,13 +20,23 @@
     $('.main-menu a[href="'+ region +'"]').addClass('active'); 
 
     
-    // ""FUNCTIONS"""
-    var userGuesses = []
+    // ""FUNCTIONS""
+    const articleName = ARTICLE_LIST[Math.floor(Math.random() * ARTICLE_LIST.length)];
+    let wikiObject;
+    getArticle(articleName).then((result => { $("#articleContents").html(result.body)}));
+
+    $("#articleName").html(articleName);
+    
+    
+
+    let userGuesses = []
     $( "#guessForm" ).on( "submit", function(e) {
         e.preventDefault();
 
-        var input = $("#guessInput").val()
+        const input = $("#guessInput").val()
         userGuesses.push(input);
+
+        // print test
         console.log(input)
         console.log(userGuesses)
     });
