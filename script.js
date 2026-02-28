@@ -21,16 +21,7 @@
 
     
     // ""FUNCTIONS"""
-    var userGuesses = []
-    $( "#guessForm" ).on( "submit", function(e) {
-        e.preventDefault();
-
-        var input = $("#guessInput").val()
-        userGuesses.push(input);
-        console.log(input)
-        console.log(userGuesses)
-    });
-
+    
   });
   
 })(jQuery);
