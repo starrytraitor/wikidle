@@ -22,11 +22,8 @@
     
     // ""FUNCTIONS""
     const articleName = ARTICLE_LIST[Math.floor(Math.random() * ARTICLE_LIST.length)];
-    let wikiObject;
-    getArticle(articleName).then((result => { $("#articleContents").html(result.body)}));
-
-    $("#articleName").html(articleName);
-    
+    var articleTitle = ""
+    getArticle(articleName).then((result => { $("#articleContents").html(result.body),$("#articleName").html(result.title)}));
     
 
     let userGuesses = []

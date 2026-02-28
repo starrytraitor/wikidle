@@ -118,3 +118,28 @@ ul.main-menu li a.active {
 .show {
   display:block;
 }
+
+#article{
+  background-color: #f8f9fa;
+  color: black;
+}
+
+#articleName{
+  font-size: 1.8em;
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#articleContents {
+  display: bloc;
+  line-height: 1.625;
+  font: "sans-serif";
+  margin: 8px;
+  padding: 8px;
+}
