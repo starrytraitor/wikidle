@@ -24,10 +24,13 @@
 
 })(jQuery);
   var chances = 100
+  var input = ""
   function decreaseChance(){
     document.getElementById("chancesRemaining").textContent = chances
     
-    if (chances>0) chances-=1
-    
+    if (chances>0) {chances-=1, console.log("here")}
+
     document.getElementById("chancesRemaining").textContent = chances
+    input = document.getElementById("userInput").value
+    document.getElementById("guessedWord").textContent = input
   }

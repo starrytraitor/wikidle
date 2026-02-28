@@ -36,8 +36,10 @@
     <div id="container">
       <div class="inner">
         <div id="content"> 
-          <button id="enterGuess">Guess String</button>
-          <div onclick="decreaseChance()">Chances reamining<span id =chancesRemaining></span>/100</div>
+          <input type="text" id="userInput" placeholder="Guess Here">
+          <button id="enterGuess" onclick="decreaseChance()">Guess String</button>
+          <div>Chances reamining<span id =chancesRemaining></span> /100</div>
+          <div>Your string is <span id="guessedWord"></span></div>
       
           <div id="home" class="content-region hide">
             <h2>Home</h2>
