@@ -20,4 +20,14 @@
     
   });
   
+
+
 })(jQuery);
+  var chances = 100
+  function decreaseChance(){
+    document.getElementById("chancesRemaining").textContent = chances
+    
+    if (chances>0) chances-=1
+    
+    document.getElementById("chancesRemaining").textContent = chances
+  }
