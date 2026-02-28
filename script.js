@@ -24,11 +24,10 @@
     var userGuesses = []
     $( "#guessForm" ).on( "submit", function(e) {
         e.preventDefault();
-        alert("Handler for 'submit' called.");
 
         var input = $("#guessInput").val()
         userGuesses.push();
-        print(userGuesses)
+        console.log(userGuesses)
     });
 
   });
