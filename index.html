@@ -16,7 +16,7 @@
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
-    
+
   </head>
 
   <body>
@@ -44,21 +44,16 @@
                     <label for="guessInput">Enter your guess:</label>
                     <input id="guessInput" type="text" name="lname">
                     <input type="submit" value="ENTER">
-                    <div id="userMessage"></div>
-                    <table id="guessTable">
-                      <tbody>
-                        <tr>
-                          <td>Guesses</td>
-                          <td>Count</td>
-                        </tr>
-                      </tbody>
-                    </table>
+                    <div id="guessList"></div>
                 </form>
 
                 <div id="article">
                   <div id="articleContents">
                       contents
                   </div>
+                </div>
+
+                <div id="winPopup">
                 </div>
 
             </p>
@@ -81,15 +76,16 @@
         </div>
       </div>
     </div>
-    
+
     <script type="text/javascript" src="script.js"></script>
     <script type="text/javascript" src="articleList.js"></script>
     <script type="text/javascript" src="findInArticle.js"></script>
     <script type="text/javascript" src="getArticle.js"></script>
     <script type="text/javascript" src="guessForm.js"></script>
     <script type="text/javascript" src="parseWikitext.js"></script>
-
     <script type="text/javascript" src="blackout.js"></script>
+    <script type="text/javascript" src="createWinPopup.js"></script>
+    <script type="text/javascript" src="guessList.js"></script>
 
   </body>
 </html>

@@ -150,3 +150,29 @@ h3, h4, h5, h6 {
 :is(h1, h2, h3, h4, h5, h6) + br {
         display: none;
 }
+
+#winPopup {
+        display: none;
+        position: fixed;
+        z-index: 2;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #000d;
+        padding: 20px;
+}
+
+#winPopup h2 {
+        text-align: center;
+}
+
+#winPopup button {
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: #0000;
+        border: none;
+        color: white;
+        cursor: pointer;
+}

@@ -44,12 +44,18 @@
 
         const input = $("#guessInput").val()
         userGuesses.push(input);
+        $("#guessList").html(`<h2>Your guess${userGuesses.length === 1 ? "" : "es"}:</h2>\n${guessList(userGuesses, article)}`)
 
         const x = blackout(article, userGuesses);
 
-        $("#articleContents").html(parseArticle(x));
+        if (x) $("#articleContents").html(parseArticle(x));
+        else {
+                $("#articleContents").html(parseArticle(`<span class="guess">\n${article.body}\n</span>`));
+                $("#winPopup").html(createWinPopup(article, userGuesses))
+                $("#winPopup").toggle();
+        }
 
-        console.log(checkVictory(userGuesses, articleTitle));
+        // console.log(checkVictory(userGuesses, articleTitle));
     });
 
 

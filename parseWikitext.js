@@ -1,6 +1,6 @@
-function parseTitle(title) {
-    return title.replace("\n=\n\n", "<h1>").replace("=\n", "<h1>");
-}
+// function parseTitle(title) {
+    // return title.replace("\n=\n\n", "<h1>").replace("=\n", "<h1>");
+// }
 
 function parseArticle(article) {
     const old = [
@@ -20,13 +20,13 @@ function parseArticle(article) {
     return article;
 }
 
-function checkVictory(input, solution) {
-    solution = solution.replace("\n", "").replace("=", "").split(" ");
-    let numMatched = 0;
-    for (let i = 0; i < solution.length; i++) {
-        if (input.includes(solution[i].toLowerCase())) {
-            numMatched++;
-        }
-    }
-    return numMatched == solution.length;
-}
+// function checkVictory(input, solution) {
+    // solution = solution.replace("\n", "").replace("=", "").split(" ");
+    // let numMatched = 0;
+    // for (let i = 0; i < solution.length; i++) {
+        // if (input.includes(solution[i].toLowerCase())) {
+            // numMatched++;
+        // }
+    // }
+    // return numMatched == solution.length;
+// }
