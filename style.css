@@ -5,7 +5,7 @@ body {
   font-size: 1.5em;
   line-height: 1.6;
   font-weight: 400;
-  font-family: "Roboto", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: sans-serif;
   color: #FFFFFF;
   max-width:1000px;
   margin:25px auto;
@@ -23,10 +23,6 @@ a:focus {
 
 small {
   font-size: 75%;
-}
-
-h2 {
-  margin-top: 10px;
 }
 
 q {
@@ -114,16 +110,11 @@ ul.main-menu li a.active {
   overflow: scroll;
 }
 
-#articleName{
-  font-size: 1.8em;
-  position: relative;
-  font-family: "Georgia", serif;
-}
-
 #articleContents {
         background-color: black;
         display: inline;
         line-height: 1.3em;
+        user-select: none;
 }
 
 #article {
@@ -143,4 +134,8 @@ ul.main-menu li a.active {
         line-height: initial;
         background-color: black;
         width: fit-content;
+}
+
+h1 {
+        font-family: 'Linux Libertine','Georgia','Times','Source Serif 4',serif;
 }
