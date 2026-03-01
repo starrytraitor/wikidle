@@ -136,10 +136,15 @@ ul.main-menu li a.active {
         width: fit-content;
 }
 
-h1 {
+#articleContents :is(h1, h2) {
         font-family: 'Linux Libertine','Georgia','Times','Source Serif 4',serif;
+        font-weight: 400;
 }
 
-:is(h1, h2, h3, h4, h5, h6, br) + br {
+h3, h4, h5, h6 {
+        font-weight: 700;
+}
+
+:is(h1, h2, h3, h4, h5, h6) + br {
         display: none;
 }
