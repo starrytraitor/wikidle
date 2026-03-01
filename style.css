@@ -127,13 +127,6 @@ ul.main-menu li a.active {
 #articleName{
   font-size: 1.8em;
   position: relative;
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: flex-end;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 #articleContents {
