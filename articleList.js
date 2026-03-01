@@ -57,7 +57,7 @@ const ARTICLE_LIST = [
     "Winston Churchill",
     "Sun",
     "Moon",
-    "Black Hole",--
+    "Black Hole",
     "Mercury",
     "Venus",
     "Mars",
