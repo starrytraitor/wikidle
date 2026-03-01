@@ -10,6 +10,8 @@ var userGuesses = []
           guessesCount+=1
           $("#userMessage").text("You've guessed "+guessesCount+" times!")          
           userGuesses.push(input);
+          var newRow = `<tr><td>${input}</td><td>Count</td></tr>`
+          $("#guessTable tbody").append(newRow)
         }
         console.log(input)
         console.log(userGuesses)
