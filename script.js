@@ -47,9 +47,13 @@
 
         const x = blackout(article, userGuesses);
 
-        $("#articleContents").html(parseArticle(x));
+        if (x) $("#articleContents").html(parseArticle(x));
+        else {
+                $("#articleContents").html(parseArticle(`<span class="guess">\n${article.body}\n</span>`));
+                $("#winPopup").toggle();
+        }
 
-        console.log(checkVictory(userGuesses, articleTitle));
+        // console.log(checkVictory(userGuesses, articleTitle));
     });
 
 
