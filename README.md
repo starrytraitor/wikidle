@@ -7,4 +7,4 @@
 
 ##TODO before finished
 - Implement hidden by default/show when guessed
-- Fix article disappearing upon guess
+- Show whole article, stop user input, and show victory message upon successful guess
