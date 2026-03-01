@@ -4,8 +4,6 @@ function blackout(article, guesses) {
                 guessesLocs[guess] = findInArticle(guess, article);
         });
 
-        console.log(guessesLocs);
-
         let guessLocs = [];
         for (let guess in guessesLocs) {
                 for (let loc of guessesLocs[guess])
@@ -14,36 +12,10 @@ function blackout(article, guesses) {
 
         guessLocs.sort((v,u) => (v.start>u.start));
 
-        console.log(guessLocs);
+        expand2punc(guessLocs)
+        expand2wtsp(guessLocs)
+        combineOverlapping(guessLocs)
 
-        // expands visible regions to include surrounding punctuation
-        for (let guessLoc of guessLocs) {
-                while (article.body[guessLoc.start-1].match(/[^\w\s]/))
-                        guessLoc.start--;
-                while (article.body[guessLoc.end].match(/[^\w\s]/))
-                        guessLoc.end++;
-        }
-
-        // expands visible regions to include surrounding spaces
-        for (let guessLoc of guessLocs) {
-                while (article.body[guessLoc.start-1].match(/\s/))
-                        guessLoc.start--;
-                while (article.body[guessLoc.end].match(/\s/))
-                        guessLoc.end++;
-        }
-
-        // combines overlapping guesses (including those adjacent, since they've
-        // been expanded to contain punctuation and spaces)
-        for (let i = 0; i < guessLocs.length; i++) {
-                if (guessLocs[i].end > guessLocs[i+1]?.start) {
-                        guessLocs[i].end = Math.max(
-                                guessLocs[i].end,
-                                guessLocs[i+1]?.end ?? -Infinity
-                        );
-                        guessLocs.splice(i+1,1);
-                        i--;
-                }
-        }
 
         let ret = "";
         let j = 0;
@@ -67,4 +39,40 @@ function blackout(article, guesses) {
         }
 
         return ret;
+}
+
+// expands visible regions to include surrounding punctuation
+function expand2punc(guessLocs) {
+        for (let guessLoc of guessLocs) {
+                while (article.body[guessLoc.start-1].match(/[^\w\s]/))
+                        guessLoc.start--;
+                while (article.body[guessLoc.end].match(/[^\w\s]/))
+                        guessLoc.end++;
+        }
+}
+
+// expands visible regions to include surrounding spaces
+function expand2wtsp(guessLocs) {
+        for (let guessLoc of guessLocs) {
+                while (article.body[guessLoc.start-1].match(/\s/))
+                        guessLoc.start--;
+                while (article.body[guessLoc.end].match(/\s/))
+                        guessLoc.end++;
+        }
+}
+
+
+// combines overlapping guesses (including those adjacent, since they've
+// been expanded to contain punctuation and spaces)
+function combineOverlapping(guessLocs) {
+        for (let i = 0; i < guessLocs.length; i++) {
+                if (guessLocs[i].end > guessLocs[i+1]?.start) {
+                        guessLocs[i].end = Math.max(
+                                guessLocs[i].end,
+                                guessLocs[i+1]?.end ?? -Infinity
+                        );
+                        guessLocs.splice(i+1,1);
+                        i--;
+                }
+        }
 }
