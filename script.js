@@ -42,7 +42,8 @@
     $( "#guessForm" ).on( "submit", function(e) {
         e.preventDefault();
 
-        const input = $("#guessInput").val()
+        const input = $("#guessInput").val();
+        $("#guessInput").val("");
         userGuesses.push(input);
         $("#guessList").html(`<h2>Your guess${userGuesses.length === 1 ? "" : "es"}:</h2>\n${guessList(userGuesses, article)}`)
 
