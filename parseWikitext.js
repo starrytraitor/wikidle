@@ -4,14 +4,14 @@ function parseTitle(title) {
 
 function parseArticle(article) {
     const old = [
-        /^======/, /^=====/, /^====/, /^===/, /^==/, /^=/,
-        /======$/, /=====$/, /====$/, /===$/, /==$/, /=$/,
-        "\n\n",];
+        /^======[^=]/mg, /^=====[^=]/mg, /^====[^=]/mg, /^===[^=]/mg, /^==[^=]/mg, /^=[^=]/mg,
+        /[^=]======$/mg, /[^=]=====$/mg, /[^=]====$/mg, /[^=]===$/mg, /[^=]==$/mg, /[^=]=$/mg,
+        />\n+/mg, /\n+</mg, /\n+/mg];
 
     const replacement = [
         "<h6>","<h5>","<h4>","<h3>","<h2>","<h1>",
         "</h6>","</h5>","</h4>","</h3>","</h2>","</h1>",
-        "<br><br>"];
+        ">", "<", "<br>"];
 
     for (let i = 0; i < old.length; i++) {
         article = article.replaceAll(old[i], replacement[i]);
