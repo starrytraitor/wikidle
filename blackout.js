@@ -48,11 +48,21 @@ function blackout(article, guesses) {
         let ret = "";
         let j = 0;
         for (let i = 0; i < article.body.length; i++) {
-                if (i === guessLocs[j]?.start) ret += "<span class='guess'>";
-                if (i === guessLocs[j]?.end) {
-                        ret += "</span>";
-                        j++;
+                if (i === guessLocs[j]?.start) {
+                        ret += "<span class='guess'>";
+                        if (article.body[i].match(/\s/)) {
+                                ret += "&nbsp;";
+                                continue;
+                        }
                 }
+                if (i+1 === guessLocs[j]?.end) {
+                        if (article.body[i].match(/\s/)) {
+                                ret += "&nbsp;</span>";
+                                j++;
+                                continue;
+                        }
+                }
+
                 ret += article.body[i];
         }
 
