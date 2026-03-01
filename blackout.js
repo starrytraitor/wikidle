@@ -12,7 +12,7 @@ function blackout(article, guesses) {
 
         guessLocs.sort((v,u) => (v.start>u.start));
 
-        if (guessLocs.at(0).start === -2) return false;
+        if (guessLocs.at(0)?.start === -2) return false;
 
         expand2punc(article, guessLocs)
         expand2wtsp(article, guessLocs)

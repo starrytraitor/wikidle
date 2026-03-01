@@ -18,6 +18,7 @@
     // Highlight the menu link associated with this region by adding the .active CSS class
     $('.main-menu a[href="'+ region +'"]').addClass('active');
 
+    const date = (new Date()).toDateString();
 
     // ""FUNCTIONS""
     const articleTitle = ARTICLE_LIST[Math.floor(Math.random() * ARTICLE_LIST.length)];
@@ -38,11 +39,13 @@
     //
 // >>>>>>> starry
 
-    let userGuesses = []
+    let userGuesses = localStorage.get("date") === date ? JSON.parse(localStorage.get("guesses") ?? "[]") : [];
+    localStorage.set("date", date);
     $( "#guessForm" ).on( "submit", function(e) {
         e.preventDefault();
 
-        const input = $("#guessInput").val()
+        const input = $("#guessInput").val();
+        $("#guessInput").val("");
         userGuesses.push(input);
         $("#guessList").html(`<h2>Your guess${userGuesses.length === 1 ? "" : "es"}:</h2>\n${guessList(userGuesses, article)}`)
 
@@ -54,6 +57,8 @@
                 $("#winPopup").html(createWinPopup(article, userGuesses))
                 $("#winPopup").toggle();
         }
+
+        localStorage.set("guesses", JSON.stringify(userGuesses));
 
         // console.log(checkVictory(userGuesses, articleTitle));
     });
