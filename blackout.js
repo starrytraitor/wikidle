@@ -12,6 +12,8 @@ function blackout(article, guesses) {
 
         guessLocs.sort((v,u) => (v.start>u.start));
 
+        if (guessLocs.at(0)) return `<span class="guess">\n${article.body}\n</span>`;
+
         expand2punc(article, guessLocs)
         expand2wtsp(article, guessLocs)
         combineOverlapping(guessLocs)
@@ -44,7 +46,8 @@ function blackout(article, guesses) {
 // expands visible regions to include surrounding punctuation
 function expand2punc(article, guessLocs) {
         for (let guessLoc of guessLocs) {
-                while (article.body[guessLoc.start-1].match(/[^\w\s]/))
+                console.log(guessLoc)
+                while (guessLoc.start && article.body[guessLoc.start-1].match(/[^\w\s]/))
                         guessLoc.start--;
                 while (article.body[guessLoc.end].match(/[^\w\s]/))
                         guessLoc.end++;
@@ -54,7 +57,7 @@ function expand2punc(article, guessLocs) {
 // expands visible regions to include surrounding spaces
 function expand2wtsp(article, guessLocs) {
         for (let guessLoc of guessLocs) {
-                while (article.body[guessLoc.start-1].match(/[^\S\r\n]/))
+                while (guessLoc.start && article.body[guessLoc.start-1].match(/[^\S\r\n]/))
                         guessLoc.start--;
                 while (article.body[guessLoc.end].match(/[^\S\r\n]/))
                         guessLoc.end++;

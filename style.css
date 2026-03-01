@@ -130,7 +130,7 @@ ul.main-menu li a.active {
         display: inline-block;
 }
 
-#articleContents :is(h1, h2, h3, h4, h5, h6) {
+#articleContents > :is(h1, h2, h3, h4, h5, h6) {
         line-height: initial;
         background-color: black;
         width: fit-content;
@@ -139,6 +139,8 @@ ul.main-menu li a.active {
 #articleContents :is(h1, h2) {
         font-family: 'Linux Libertine','Georgia','Times','Source Serif 4',serif;
         font-weight: 400;
+        border-bottom: 1px solid black;
+        padding-bottom: 5px;
 }
 
 h3, h4, h5, h6 {
