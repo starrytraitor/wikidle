@@ -13,7 +13,8 @@ async function getArticle(title) {
                 .then((x) => (x.json()))
                 .then((x) => (x.query.pages))
                 .then((x) => (x[Object.keys(x)[0]]))
-                .then((x) => ({title: `=\n${x.title}\n=\n\n`, body: x.extract}))
+                .then((x) => ({title: x.title,
+                               body: `= ${x.title} =\n\n${x.extract}`}))
                 .then((x) => (ret = x));
         return ret;
 }
