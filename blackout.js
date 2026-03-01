@@ -24,6 +24,14 @@ function blackout(article, guesses) {
                         guessLoc.end++;
         }
 
+        // expands visible regions to include surrounding spaces
+        for (let guessLoc of guessLocs) {
+                while (article.body[guessLoc.start-1].match(/\s/))
+                        guessLoc.start--;
+                while (article.body[guessLoc.end].match(/\s/))
+                        guessLoc.end++;
+        }
+
         let ret = "";
         let j = 0;
         for (let i = 0; i < article.body.length; i++) {
