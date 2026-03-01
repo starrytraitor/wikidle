@@ -12,9 +12,11 @@ function blackout(article, guesses) {
 
         guessLocs.sort((v,u) => (v.start>u.start));
 
-        expand2punc(guessLocs)
-        expand2wtsp(guessLocs)
+        expand2punc(article, guessLocs)
+        expand2wtsp(article, guessLocs)
         combineOverlapping(guessLocs)
+
+        console.log(guessLocs);
 
 
         let ret = "";
@@ -42,7 +44,7 @@ function blackout(article, guesses) {
 }
 
 // expands visible regions to include surrounding punctuation
-function expand2punc(guessLocs) {
+function expand2punc(article, guessLocs) {
         for (let guessLoc of guessLocs) {
                 while (article.body[guessLoc.start-1].match(/[^\w\s]/))
                         guessLoc.start--;
@@ -52,7 +54,7 @@ function expand2punc(guessLocs) {
 }
 
 // expands visible regions to include surrounding spaces
-function expand2wtsp(guessLocs) {
+function expand2wtsp(article, guessLocs) {
         for (let guessLoc of guessLocs) {
                 while (article.body[guessLoc.start-1].match(/\s/))
                         guessLoc.start--;

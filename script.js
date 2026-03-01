@@ -22,7 +22,10 @@
     // ""FUNCTIONS""
     const articleTitle = ARTICLE_LIST[Math.floor(Math.random() * ARTICLE_LIST.length)];
 // <<<<<<< HEAD
-    getArticle(articleTitle).then((result => { $("#articleContents").html(parseArticle(result.body)) }));
+
+    let article = {};
+
+    getArticle(articleTitle).then((result => { $("#articleContents").html(parseArticle((article = result).body)) }));
 
 // =======
     // getArticle(articleTitle).then((result => {
@@ -41,6 +44,12 @@
 
         const input = $("#guessInput").val()
         userGuesses.push(input);
+
+        const x = blackout(article, userGuesses);
+
+        console.log(x);
+
+        $("#articleContents").html(parseArticle(x));
 
         console.log(checkVictory(userGuesses, articleTitle));
     });
