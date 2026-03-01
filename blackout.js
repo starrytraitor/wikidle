@@ -16,6 +16,14 @@ function blackout(article, guesses) {
 
         console.log(guessLocs);
 
+        // expands visible regions to include surrounding punctuation
+        for (let guessLoc of guessLocs) {
+                while (article.body[guessLoc.start-1].match(/[^\w\s]/))
+                        guessLoc.start--;
+                while (article.body[guessLoc.end].match(/[^\w\s]/))
+                        guessLoc.end++;
+        }
+
         let ret = "";
         let j = 0;
         for (let i = 0; i < article.body.length; i++) {
