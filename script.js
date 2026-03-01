@@ -50,6 +50,7 @@
         if (x) $("#articleContents").html(parseArticle(x));
         else {
                 $("#articleContents").html(parseArticle(`<span class="guess">\n${article.body}\n</span>`));
+                $("#winPopup").html(createWinPopup(article, userGuesses))
                 $("#winPopup").toggle();
         }
 
