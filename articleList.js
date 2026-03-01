@@ -1,6 +1,6 @@
-export const ARTICLE_LIST = [
-    "United States",
-    "Donald Trump",
+const ARTICLE_LIST = [
+    "United_States",
+    "Donald_Trump",
     "Elizabeth II",
     "India",
     "Barack Obama",
