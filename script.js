@@ -53,6 +53,7 @@
         const input = $("#guessInput").val();
         $("#guessInput").val("");
         userGuesses.push(input);
+        $("#guessInput").val("");
         $("#guessList").html(`<h2>Your guess${userGuesses.length === 1 ? "" : "es"}:</h2>\n${guessList(userGuesses, article)}`)
 
         const x = blackout(article, userGuesses);
