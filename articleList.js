@@ -146,7 +146,6 @@ export const ARTICLE_LIST = [
     "Mickey Mouse",
     "Satan",
     "Mario",
-    "Luigi",
     "Dragon",
     "Wonder Woman",
     "Biology",
