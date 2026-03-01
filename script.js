@@ -22,7 +22,7 @@
     // ""FUNCTIONS""
     const articleTitle = ARTICLE_LIST[Math.floor(Math.random() * ARTICLE_LIST.length)];
 // <<<<<<< HEAD
-    getArticle(articleTitle).then((result => { $("#articleContents").html(result.body) }));
+    getArticle(articleTitle).then((result => { $("#articleContents").html(parseArticle(result.body)) }));
 
 // =======
     // getArticle(articleTitle).then((result => {
