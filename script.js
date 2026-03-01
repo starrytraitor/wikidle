@@ -37,6 +37,13 @@
         console.log(userGuesses)
     });
 
+    var brainRotting = false
+    $( "#brainRot").on("click", function(e){
+      brainRotting = !brainRotting
+      if (brainRotting) {$( "#video").show(); console.log("here")}
+      else $( "#video").hide()
+    
+    })
   });
   
 })(jQuery);
