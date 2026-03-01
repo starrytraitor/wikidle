@@ -170,6 +170,8 @@ h3, h4, h5, h6 {
         transform: translate(-50%, -50%);
         background-color: #000d;
         padding: 20px;
+        overflow: scroll;
+        height: 80%;
 }
 
 #winPopup h2 {
