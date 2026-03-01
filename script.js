@@ -1,5 +1,4 @@
 (function ($) {
-  
   // We use some Javascript and the URL #fragment to hide/show different parts of the page
   // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#Linking_to_an_element_on_the_same_page
   $(window).on('load hashchange', function(){
@@ -22,7 +21,13 @@
     
     // ""FUNCTIONS""
     const articleTitle = ARTICLE_LIST[Math.floor(Math.random() * ARTICLE_LIST.length)];
-    getArticle(articleTitle).then((result => { $("#articleContents").html(result.body),$("#articleName").html(result.title)}));
+    getArticle(articleTitle).then((result => { 
+      console.log(result);
+      $("#articleName").html(parseTitle(result.title)),
+      $("#articleContents").html(parseArticle(result.body)), 
+      console.log(parseTitle(result.title)),
+      console.log(parseArticle(result.body)
+    )}));
     
 
     let userGuesses = []
@@ -31,11 +36,10 @@
 
         const input = $("#guessInput").val()
         userGuesses.push(input);
-
-        // print test
-        console.log(input)
-        console.log(userGuesses)
+        
+        console.log(checkVictory(userGuesses, articleTitle));
     });
+
 
   });
   
