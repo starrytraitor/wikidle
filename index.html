@@ -16,10 +16,6 @@
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>    
 
-    <!-- js sources -->
-    <script src="articleList.js"></script>
-    <script src="getArticle.js"></script>
-    <script src="findInArticle.js"></script>
     
   </head>
   
@@ -29,10 +25,10 @@
       <h1>WIKIDLE</h1>
       
       <ul class="main-menu">
-        <li><a href="#home">home</a></li>
-        <li><a href="#about">about</a></li>
-        <li><a href="#contact">contact</a></li>
-      </ul>                 
+        <li><a href="#home">HOME</a></li>
+        <!-- <li><a href="#about">ABOUT</a></li> -->
+        <!-- <li><a href="#contact">CONTACT</a></li> -->
+      </ul>
     </header>
    
     <div id="container">
@@ -40,9 +36,7 @@
         <div id="content"> 
           
           <div id="home" class="content-region hide">
-            <h2>Home</h2>
             <p>
-              home
                 <form id="guessForm">
                     <label for="guessInput">Enter your guess:</label>
                     <input id="guessInput" type="text" name="lname">
@@ -63,30 +57,28 @@
           <div id="about" class="content-region hide">
             <h2>About</h2>
             <p>
-              about
+              Wordle if it was bad
             </p>
           </div>
           
           <div id="contact" class="content-region hide">
             <h2>Contact</h2>
             <p>
-                contact
+                contact me now.
             </p>
           </div>
           
         </div>
       </div>
     </div>
-
-    <footer>  
-      Footer 
-    </footer>
     
     <script type="text/javascript" src="script.js"></script>
     <script type="text/javascript" src="articleList.js"></script>
     <script type="text/javascript" src="findInArticle.js"></script>
     <script type="text/javascript" src="getArticle.js"></script>
     <script type="text/javascript" src="guessForm.js"></script>
+    <script type="text/javascript" src="parseWikitext.js"></script>
+
 
   </body>
 </html>
