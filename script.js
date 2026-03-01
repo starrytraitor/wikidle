@@ -36,7 +36,7 @@
       // console.log(parseArticle(result.body)
     // )}));
     //
-// >>>>>>> starry
+// >>>>>>> 
 
     let userGuesses = []
     $( "#guessForm" ).on( "submit", function(e) {
@@ -44,6 +44,7 @@
 
         const input = $("#guessInput").val()
         userGuesses.push(input);
+        $("#guessInput").val("");
         $("#guessList").html(`<h2>Your guess${userGuesses.length === 1 ? "" : "es"}:</h2>\n${guessList(userGuesses, article)}`)
 
         const x = blackout(article, userGuesses);
