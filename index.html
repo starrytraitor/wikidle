@@ -21,8 +21,8 @@
   <body>
 
     <header id="header">
-      <h1>WIKIDLE</h1>
-
+      <h1>WIKIDLE <img src="image.png" width="50" height="50"></h1>
+      
       <ul class="main-menu">
         <li><a href="#home">home</a></li>
         <li><a href="#about">about</a></li>
@@ -42,12 +42,22 @@
                     <label for="guessInput">Enter your guess:</label>
                     <input id="guessInput" type="text" name="lname">
                     <input type="submit" value="ENTER">
-                    <div id="message"><div>
+                    <div id="userMessage"></div>
+                    <table id="guessTable">
+                      <tbody>
+                        <tr>
+                          <td>Guesses</td>
+                          <td>Count</td>
+                        </tr> 
+                      </tbody>
+                    </table>
                 </form>
-
-                <p id="articleName">name</p>
-                <div id="articleContents">
-                    contents
+                
+                <div id="article">
+                  <p id="articleName">name</p>
+                  <div id="articleContents">
+                      contents
+                  </div>
                 </div>
 
             </p>

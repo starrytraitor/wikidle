@@ -50,6 +50,7 @@ h6 { font-size: 1.4rem; line-height: 1.6;  letter-spacing: 0; }
 
 p {
   margin: 0 auto 1.5em auto; 
+  font-family: "Georgia", serif;
 }
 
 
@@ -82,7 +83,10 @@ html, #container, .inner { background-color:transparent;}
 header, #content, footer { 
   background: rgba(0,0,0,.8); 
   padding:25px;
-  color:#FFFFFF; 
+  color:#FFFFFF;
+}
+header{
+  font-family: "Georgia", serif;
 }
 iframe {
   max-width:100%;
@@ -117,4 +121,23 @@ ul.main-menu li a.active {
 }
 .show {
   display:block;
+}
+
+#article{
+  background-color: #f8f9fa;
+  color: black;
+}
+
+#articleName{
+  font-size: 1.8em;
+  position: relative;
+  font-family: "Georgia", serif;
+}
+
+#articleContents {
+  display: bloc;
+  line-height: 1.625;
+  font: "sans-serif";
+  margin: 8px;
+  padding: 8px;
 }

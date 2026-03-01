@@ -9,8 +9,8 @@ function findInArticle(input, article){
 	//returns -1 if the word is not in the article
 	//returns -2 if the word is the title
 	input=input.toLowerCase();
-	let title=article.title.toLowerCase();
-	let body=article.body.toLowerCase();
+	let title=article.title.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+	let body=article.body.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 	if(input==title){
 		return [-2];
 	}
