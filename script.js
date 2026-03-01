@@ -47,8 +47,6 @@
 
         const x = blackout(article, userGuesses);
 
-        console.log(x);
-
         $("#articleContents").html(parseArticle(x));
 
         console.log(checkVictory(userGuesses, articleTitle));

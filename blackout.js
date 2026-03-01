@@ -16,8 +16,6 @@ function blackout(article, guesses) {
         expand2wtsp(article, guessLocs)
         combineOverlapping(guessLocs)
 
-        console.log(guessLocs);
-
 
         let ret = "";
         let j = 0;
@@ -30,11 +28,11 @@ function blackout(article, guesses) {
                         }
                 }
                 if (i+1 === guessLocs[j]?.end) {
-                        if (article.body[i].match(/\s/)) {
-                                ret += "&nbsp;</span>";
-                                j++;
-                                continue;
-                        }
+                        ret += (article.body[i].match(/\s/) ?
+                                  "&nbsp;"
+                                : article.body[i]) + "</span>";
+                        j++;
+                        continue;
                 }
 
                 ret += article.body[i];
