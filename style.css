@@ -60,7 +60,7 @@ footer {
 
 header, #content {
   background: rgba(0,0,0,.8);
-  padding:25px;
+  padding: 10px 25px;
   color:#FFFFFF;
 }
 header{
@@ -122,12 +122,22 @@ ul.main-menu li a.active {
 }
 
 #guessForm {
-  margin: 20px
+  margin: 20px;
+  font-size:larger
+
 }
 
 .guess {
         background-color: white;
         display: inline-block;
+}
+
+#submitButton {
+        font-family: 'Source Serif 4',serif;
+        background-color: rgb(133, 129, 129);
+        color: white;
+        border: none; 
+        cursor: pointer;
 }
 
 #articleContents > :is(h1, h2, h3, h4, h5, h6) {
@@ -136,10 +146,9 @@ ul.main-menu li a.active {
         width: fit-content;
 }
 
-#articleContents :is(h1, h2) {
+label, #articleContents :is(h1, h2) {
         font-family: 'Linux Libertine','Georgia','Times','Source Serif 4',serif;
         font-weight: 400;
-        border-bottom: 1px solid black;
         padding-bottom: 5px;
 }
 
@@ -175,4 +184,10 @@ h3, h4, h5, h6 {
         border: none;
         color: white;
         cursor: pointer;
+}
+
+p {
+  margin: 0px;
+  padding-left: 20px;
+  font-size: large;
 }
