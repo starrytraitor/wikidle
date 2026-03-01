@@ -32,6 +32,19 @@ function blackout(article, guesses) {
                         guessLoc.end++;
         }
 
+        // combines overlapping guesses (including those adjacent, since they've
+        // been expanded to contain punctuation and spaces)
+        for (let i = 0; i < guessLocs.length; i++) {
+                if (guessLocs[i].end > guessLocs[i+1]?.start) {
+                        guessLocs[i].end = Math.max(
+                                guessLocs[i].end,
+                                guessLocs[i+1]?.end ?? -Infinity
+                        );
+                        guessLocs.splice(i+1,1);
+                        i--;
+                }
+        }
+
         let ret = "";
         let j = 0;
         for (let i = 0; i < article.body.length; i++) {
