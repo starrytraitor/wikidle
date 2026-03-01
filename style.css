@@ -2,10 +2,10 @@ html {
   font-size: 62.5%;
 }
 body {
-  font-size: 1.5em; 
+  font-size: 1.5em;
   line-height: 1.6;
   font-weight: 400;
-  font-family: "Roboto", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: sans-serif;
   color: #FFFFFF;
   max-width:1000px;
   margin:25px auto;
@@ -14,7 +14,7 @@ body {
 
 a {
   font-weight: normal;
-  text-decoration: none; 
+  text-decoration: none;
   color:#EF6D3D;
 }
 a:focus {
@@ -23,10 +23,6 @@ a:focus {
 
 small {
   font-size: 75%;
-}
-
-h2 {
-  margin-top: 10px;
 }
 
 q {
@@ -47,23 +43,23 @@ blockquote {
   font-size:1.8rem;
 }
 blockquote p:last-child {
-  margin-bottom: 0;  
+  margin-bottom: 0;
 }
 
 
 
-html, #container, .inner { 
+html, #container, .inner {
   background-color:transparent;
 }
 
-footer { 
-  background: rgba(0,0,0,.8); 
+footer {
+  background: rgba(0,0,0,.8);
   padding:55px;
-  color:#FFFFFF; 
+  color:#FFFFFF;
 }
 
 header, #content {
-  background: rgba(0,0,0,.8); 
+  background: rgba(0,0,0,.8);
   padding:25px;
   color:#FFFFFF;
 }
@@ -114,17 +110,11 @@ ul.main-menu li a.active {
   overflow: scroll;
 }
 
-#articleName{
-  font-size: 1.8em;
-  position: relative;
-  font-family: "Georgia", serif;
-}
-
 #articleContents {
-  display: bloc;
-  line-height: 1.625;
-  font: "sans-serif";
-  
+        background-color: black;
+        display: inline;
+        line-height: 1.3em;
+        user-select: none;
 }
 
 #article {
@@ -133,4 +123,30 @@ ul.main-menu li a.active {
 
 #guessForm {
   margin: 20px
+}
+
+.guess {
+        background-color: white;
+        display: inline-block;
+}
+
+#articleContents > :is(h1, h2, h3, h4, h5, h6) {
+        line-height: initial;
+        background-color: black;
+        width: fit-content;
+}
+
+#articleContents :is(h1, h2) {
+        font-family: 'Linux Libertine','Georgia','Times','Source Serif 4',serif;
+        font-weight: 400;
+        border-bottom: 1px solid black;
+        padding-bottom: 5px;
+}
+
+h3, h4, h5, h6 {
+        font-weight: 700;
+}
+
+:is(h1, h2, h3, h4, h5, h6) + br {
+        display: none;
 }
