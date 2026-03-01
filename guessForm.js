@@ -12,7 +12,6 @@ var userGuesses = []
           userGuesses.push(input);
           var articleName = $("#articleName").text().replaceAll("\n", '')
           articleName = articleName.replaceAll("=", '')
-          console.log(articleName)
           getArticle(articleName).then((result => {
             console.log(articleName)
             var count = findInArticle(String(input), result).length
@@ -21,6 +20,4 @@ var userGuesses = []
           }));
 
         }
-        //console.log(input)
-        //console.log(userGuesses)
     });
