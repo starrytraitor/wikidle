@@ -44,6 +44,7 @@
 
         const input = $("#guessInput").val()
         userGuesses.push(input);
+        $("#guessList").html(guessList(userGuesses, article))
 
         const x = blackout(article, userGuesses);
 
