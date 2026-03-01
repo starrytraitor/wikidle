@@ -21,26 +21,32 @@
     const date = (new Date()).toDateString();
 
     // ""FUNCTIONS""
-    const articleTitle = ARTICLE_LIST[Math.floor(Math.random() * ARTICLE_LIST.length)];
-// <<<<<<< HEAD
+    let articleTitle = ARTICLE_LIST[Math.floor(Math.random() * ARTICLE_LIST.length)];
+
+
+    let userGuesses = localStorage.getItem("date") === date ? JSON.parse(localStorage.getItem("guesses") ?? "[]") : [];
+    if (localStorage.getItem("date") === date) articleTitle = localStorage.getItem("title") ?? articleTitle;
+    else localStorage.setItem("title", articleTitle);
 
     let article = {};
 
-    getArticle(articleTitle).then((result => { $("#articleContents").html(parseArticle((article = result).body)) }));
+    getArticle(articleTitle).then((result => { $("#articleContents").html(parseArticle((article = result).body)) }))
+    .then(() => {
+            $("#guessList").html(`<h2>Your guess${userGuesses.length === 1 ? "" : "es"}:</h2>\n${guessList(userGuesses, article)}`)
+            const x = blackout(article, userGuesses);
 
-// =======
-    // getArticle(articleTitle).then((result => {
-      // console.log(result);
-      // $("#articleName").html(parseTitle(result.title)),
-      // $("#articleContents").html(parseArticle(result.body)),
-      // console.log(parseTitle(result.title)),
-      // console.log(parseArticle(result.body)
-    // )}));
-    //
-// >>>>>>> 
+            if (x) $("#articleContents").html(parseArticle(x));
+            else {
+                    $("#articleContents").html(parseArticle(`<span class="guess">\n${article.body}\n</span>`));
+                    $("#winPopup").html(createWinPopup(article, userGuesses))
+                    $("#winPopup").toggle();
+            }
+    });
 
-    let userGuesses = localStorage.get("date") === date ? JSON.parse(localStorage.get("guesses") ?? "[]") : [];
-    localStorage.set("date", date);
+
+
+
+    localStorage.setItem("date", date);
     $( "#guessForm" ).on( "submit", function(e) {
         e.preventDefault();
 
@@ -59,7 +65,7 @@
                 $("#winPopup").toggle();
         }
 
-        localStorage.set("guesses", JSON.stringify(userGuesses));
+        localStorage.setItem("guesses", JSON.stringify(userGuesses));
 
         // console.log(checkVictory(userGuesses, articleTitle));
     });

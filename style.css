@@ -136,7 +136,7 @@ ul.main-menu li a.active {
         font-family: 'Source Serif 4',serif;
         background-color: rgb(133, 129, 129);
         color: white;
-        border: none; 
+        border: none;
         cursor: pointer;
 }
 
@@ -149,7 +149,8 @@ ul.main-menu li a.active {
 label, #articleContents :is(h1, h2) {
         font-family: 'Linux Libertine','Georgia','Times','Source Serif 4',serif;
         font-weight: 400;
-        padding-bottom: 5px;
+        padding-bottom: 0.3em;
+        border-bottom: 1px solid black;
 }
 
 h3, h4, h5, h6 {

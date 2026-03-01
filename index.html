@@ -4,7 +4,7 @@
   <head>
     <!-- Page setup -->
     <meta charset="utf-8">
-    <title>wikidle</title>
+    <title>Wikidle</title>
     <meta name="description" content="Wikipedia Wordle: determine an article's subject by guessing words and making connections">
     <meta name="author" content="Samhain Ackerman, Henry Leap, Ethan Rigor, Sophia Zhang">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
@@ -22,11 +22,14 @@
   <body>
 
     <header id="header">
-      <h1>
-        <img src="Wikipedia-logo-v2.svg" height="100">
-        <span style="font-size: 100px; padding-left: 30px">WIKIDLE</span>
-      </h1>
-      <p>Uncover the subject of a random Wikipedia article, one key word at a time.</p>
+      <center>
+              <h1>
+                <img src="Wikipedia-logo-v2.svg" height="100">
+                <span style="font-size: 100px; padding-left: 30px">WIKIDLE</span>
+              </h1>
+              <p>Uncover the subject of a random Wikipedia article, one key word at a time.</p>
+              <button onclick="localStorage.setItem('date', '');location.reload();" style="width: 50%;">New Random Article</button>
+      </center>
     </header>
 
     <div id="container">
