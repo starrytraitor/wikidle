@@ -10,9 +10,17 @@ var userGuesses = []
           guessesCount+=1
           $("#userMessage").text("You've guessed "+guessesCount+" times!")          
           userGuesses.push(input);
-          var newRow = `<tr><td>${input}</td><td>Count</td></tr>`
-          $("#guessTable tbody").append(newRow)
+          var articleName = $("#articleName").text().replaceAll("\n", '')
+          articleName = articleName.replaceAll("=", '')
+          console.log(articleName)
+          getArticle(articleName).then((result => {
+            console.log(articleName)
+            var count = findInArticle(String(input), result).length
+            var newRow = `<tr><td>${input}</td><td>${count}</td></tr>`
+            $("#guessTable tbody").append(newRow)
+          }));
+
         }
-        console.log(input)
-        console.log(userGuesses)
+        //console.log(input)
+        //console.log(userGuesses)
     });
