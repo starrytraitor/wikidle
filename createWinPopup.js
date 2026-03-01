@@ -1,6 +1,8 @@
 function createWinPopup(article, userGuesses) {
-        return `Congradulations!  You won the article "${article.title}" in ${userGuesses.length} guesses!
-                Your guesses were:
+        return `<h2>Congratulations!</h2>
+                You won the article "${article.title}" in ${userGuesses.length}
+                guess${userGuesses.length === 1 ? "" : "es"}!<br>
+                Your guesses were:<br>
                 ${guessList(userGuesses)}
         `;
 }

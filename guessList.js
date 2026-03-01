@@ -1,3 +1,4 @@
 function guessList(guesses) {
-        return guesses.join("<br>")
+        const guessesStr = guesses.map((g) => (`<li>${g}</li>`)).join("\n");
+        return `<ol>\n${guessesStr}\n</ol>`
 }
