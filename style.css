@@ -139,3 +139,7 @@ ul.main-menu li a.active {
 h1 {
         font-family: 'Linux Libertine','Georgia','Times','Source Serif 4',serif;
 }
+
+:is(h1, h2, h3, h4, h5, h6, br) + br {
+        display: none;
+}

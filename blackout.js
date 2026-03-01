@@ -22,13 +22,13 @@ function blackout(article, guesses) {
         for (let i = 0; i < article.body.length; i++) {
                 if (i === guessLocs[j]?.start) {
                         ret += "<span class='guess'>";
-                        if (article.body[i].match(/\s/)) {
+                        if (article.body[i].match(/[^\S\r\n]/)) {
                                 ret += "&nbsp;";
                                 continue;
                         }
                 }
                 if (i+1 === guessLocs[j]?.end) {
-                        ret += (article.body[i].match(/\s/) ?
+                        ret += (article.body[i].match(/[^\S\r\n]/) ?
                                   "&nbsp;"
                                 : article.body[i]) + "</span>";
                         j++;
@@ -54,9 +54,9 @@ function expand2punc(article, guessLocs) {
 // expands visible regions to include surrounding spaces
 function expand2wtsp(article, guessLocs) {
         for (let guessLoc of guessLocs) {
-                while (article.body[guessLoc.start-1].match(/\s/))
+                while (article.body[guessLoc.start-1].match(/[^\S\r\n]/))
                         guessLoc.start--;
-                while (article.body[guessLoc.end].match(/\s/))
+                while (article.body[guessLoc.end].match(/[^\S\r\n]/))
                         guessLoc.end++;
         }
 }
